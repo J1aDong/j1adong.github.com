@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "rebound": "0.0.15",
     "velocity-animate": "^2.0.1",
     "vue": "^2.5.2"
   },
