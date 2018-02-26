@@ -5,7 +5,7 @@
       <div class="song-img" ref="rotate"></div>
     </div>
     <div class="lrc" ref="lrc">
-      <div v-for="(item,index) in lines" :class="currentLine == index?lrcActive:''" style="top: -50px">
+      <div v-for="(item,index) in lines" :class="currentLine == index?lrcActive:''">
         {{item.text}}
       </div>
     </div>
@@ -57,7 +57,7 @@
           let diff = new Date(currentTime - startTime)
           let ms = parseInt(diff.getMilliseconds() / 10)
           that.time = `${that.pad(diff.getMinutes())}:${that.pad(diff.getSeconds())}.${that.pad(ms)}`
-        }, 100)
+        }, 80)
       },
       pad(x) {
         return (x < 10) ? ("0" + x) : x;
@@ -77,12 +77,12 @@
         })
       },
       currentLine(val) {
-        if (val > 4) {
-          // this.$refs.lrc.scrollTop = (val - 4) * 20
-          Velocity(this.$refs.lrc, "scrollTop", {duration: 500, offset: (val - 4) * 20})
+        if (val > 5) {
+          this.$refs.lrc.scrollTop = (val - 5) * 20
+          // Velocity(this.$refs.lrc, {scroll: (val - 4) * 20}, {duration: 1000})
         } else {
-          // this.$refs.lrc.scrollTop = 0
-          Velocity(this.$refs.lrc, "scrollTop", {duration: 500, offset: 0})
+          this.$refs.lrc.scrollTop = 0
+          // Velocity(this.$refs.lrc, {scroll: 0}, {duration: 1000})
         }
       }
     }
