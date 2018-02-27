@@ -12,7 +12,8 @@
   "dependencies": {
     "rebound": "0.0.15",
     "velocity-animate": "^2.0.1",
-    "vue": "^2.5.2"
+    "vue": "^2.5.2",
+    "vue-awesome": "^2.3.4"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
